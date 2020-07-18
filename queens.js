@@ -45,7 +45,6 @@
 'Sigrid',
 'Edith',
 'Adeliza',
-'Eleanor',
 'Berengaria',
 'Philippa',
 'Joan',
@@ -82,5 +81,5 @@
 'Auria',
 'Sancha',
 'Dulce',
-'Judith',
+'Judith'
 ]
