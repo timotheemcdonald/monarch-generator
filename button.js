@@ -66,9 +66,13 @@ const ButtonDeco = styled.button`
     }
 `
 
+
+
 function ShowButton(props) {
     const [showKing, setShow] = useState(false)
     const [showQueen, setQShow] = useState(false)
+    const [showTest, setTest] = useState(false)
+
     const toggleKingShow = (event) => {
         setShow(true)
         setQShow(false)
@@ -78,24 +82,60 @@ function ShowButton(props) {
         setQShow(true)
         setShow(false)
     }
+
+    const toggleOn = (event) => {
+
+        if (showTest === false){
+            setTest(true)
+        } else {
+            setTest(false)
+        }
+
+    }
   
 
     if (showKing) {
+        
         return (
             <div>
-        <StyledMonarch>{props.newKing[Math.floor(Math.random() * props.newKing.length)]} {props.newTitle[Math.floor(Math.random() * props.newTitle.length)]}</StyledMonarch>
+        <StyledMonarch>King {props.newKing[Math.floor(Math.random() * props.newKing.length)]} {props.newTitle[Math.floor(Math.random() * props.newTitle.length)]}</StyledMonarch>
         <ButtonContainer>
-        <ButtonDeco onClick={toggleKingShow}>Generate New King</ButtonDeco>
+        <ButtonDeco onClick={toggleKingShow, toggleOn}>Generate New King</ButtonDeco>
         <ButtonDeco onClick={toggleQueenShow}>Generate New Queen</ButtonDeco>
         </ButtonContainer>
         </div>
         )
     }
 
+    if (showKing && showTest) {
+
+        return (
+            <div>
+            <StyledMonarch>King {props.newKing[Math.floor(Math.random() * props.newKing.length)]} {props.newTitle[Math.floor(Math.random() * props.newTitle.length)]}</StyledMonarch>
+            <ButtonContainer>
+            <ButtonDeco onClick={toggleKingShow}>Generate New King</ButtonDeco>
+            <ButtonDeco onClick={toggleQueenShow}>Generate New Queen</ButtonDeco>
+            </ButtonContainer>
+            </div>
+        )
+    }
+
     if (showQueen) {
         return (
             <div>
-            <StyledMonarch>{props.newQueen[Math.floor(Math.random() * props.newQueen.length)]} {props.newTitle[Math.floor(Math.random() * props.newTitle.length)]}</StyledMonarch>
+            <StyledMonarch>Queen {props.newQueen[Math.floor(Math.random() * props.newQueen.length)]} {props.newTitle[Math.floor(Math.random() * props.newTitle.length)]}</StyledMonarch>
+            <ButtonContainer>
+        <ButtonDeco onClick={toggleKingShow}>Generate New King</ButtonDeco>
+        <ButtonDeco onClick={toggleQueenShow, toggleOn}>Generate New Queen</ButtonDeco>
+        </ButtonContainer>
+        </div>
+        )
+    }
+
+    if (showQueen && showTest) {
+        return (
+            <div>
+            <StyledMonarch>Queen {props.newQueen[Math.floor(Math.random() * props.newQueen.length)]} {props.newTitle[Math.floor(Math.random() * props.newTitle.length)]}</StyledMonarch>
             <ButtonContainer>
         <ButtonDeco onClick={toggleKingShow}>Generate New King</ButtonDeco>
         <ButtonDeco onClick={toggleQueenShow}>Generate New Queen</ButtonDeco>
