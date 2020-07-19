@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import kings from './kings'
 import queens from './queens'
 import titles from './titles'
+import Button from './button'
 
 const MonarchWelcome = styled.div`
 
@@ -23,47 +24,6 @@ max-width:100%;
 letter-spacing: 4px;
 `
 
-const ButtonDeco = styled.button`
-    background-color:black;
-    font-family: 'Grenze Gotisch', cursive;
-    color:ivory;
-    padding:2%;
-    width:15%;
-    font-size:2.5rem;
-    border-radius:5%;
-    margin:5%;
-`
-const StyledQueen = styled.div`
-
-    font-family: 'Lora',cursive;
-    color:black;
-    font-size:6rem;
-    display: flex;
-    justify-content:center;
-    align-content:center;
-    text-align:center;
-
-`
-
-const StyledKing = styled.div`
-
-    font-family: 'Lora', cursive;
-    color:black;
-    font-size:6rem;
-    display: flex;
-    justify-content:center;
-    align-content:center;
-    text-align:center;
-
-`
-
-const ButtonContainer = styled.div`
-display:flex;
-justify-content:center;
-align-items:center;
-margin:2%;
-`
-
 function App() {
 
     const [kingName] = useState(kings);
@@ -76,19 +36,13 @@ function App() {
 
     let newTitle = surName[Math.floor(Math.random() * surName.length)];
 
-
-
     return (
         <div>
         <MonarchWelcome>Monarch Generator</MonarchWelcome>
-        <StyledKing>{newKing} {newTitle}</StyledKing>
-    <StyledQueen>{newQueen} {newTitle}</StyledQueen>
-        <ButtonContainer>
-        <ButtonDeco>Generate New King</ButtonDeco>
-        <ButtonDeco>Generate New Queen</ButtonDeco>
-        </ButtonContainer>
+       <Button newQueen={queenName} newTitle={surName} newKing={kingName}></Button>
         </div>
     )
+    
 }
 
 export default App;
