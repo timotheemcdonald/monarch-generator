@@ -22,6 +22,17 @@ color:ivory;
 width:100%;
 max-width:100%;
 letter-spacing: 4px;
+
+@media(max-width:500px){
+        font-size:4rem;
+        margin:20% auto;
+    }
+
+
+    @media(max-width:800x){
+        
+    }
+
 `
 
 function App() {

@@ -17,7 +17,17 @@ const StyledMonarch = styled.div`
     justify-content:center;
     align-content:center;
     text-align:center;
-    margin:5% auto;
+    margin:7% auto;
+
+    @media(max-width:375px){
+        font-size:5rem;
+        margin:10% auto;
+    }
+
+
+    @media(max-width:768px){
+
+    }
 
 `
 
@@ -31,6 +41,29 @@ const ButtonDeco = styled.button`
     border-radius:5%;
     margin:2.5%;
     margin-top:1%;
+
+
+    @media(max-width:375px){
+        padding:1%;
+        margin:auto;
+        margin-top:7.5%;
+        width:40%;
+        font-size:1rem;
+    }
+
+    @media(max-width:500px){
+        width:30%;
+        padding:1%;
+        margin:auto;
+        font-size:2rem;
+        margin-top:7.5%;
+    }
+
+
+    @media(max-width:800px){
+        width:30%;
+        font-size:2.5rem;
+    }
 `
 
 function ShowButton(props) {
