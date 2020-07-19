@@ -1,3 +1,5 @@
+const queens =
+
 [
 'Adelaid',
 'Agnes',
@@ -83,3 +85,5 @@
 'Dulce',
 'Judith'
 ]
+
+export default queens;

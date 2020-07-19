@@ -1,3 +1,5 @@
+const titles =
+
 [
 'the Bald', 
 'the Stammerer',
@@ -122,3 +124,5 @@
 'the Merciful',
 'the Magnificent'
 ]
+
+export default titles;

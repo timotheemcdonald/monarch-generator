@@ -1,4 +1,4 @@
-[
+const kings = [
 'Charles',
 'Louis',
 'Carloman',
@@ -76,3 +76,5 @@
 'Bela',
 'Ashot'
 ]
+
+export default kings;
